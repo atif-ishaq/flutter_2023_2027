@@ -9,12 +9,12 @@ class MySignInApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-    );
- 
-  //return LoginScreen();
+    // return const MaterialApp(
+    //   debugShowCheckedModeBanner: false,
+    //   home: LoginScreen(),
+    // );
+
+    return LoginScreen();
   }
 }
 
@@ -63,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.purple,
                     ),
                   ),
-                  
+
                   const SizedBox(height: 24),
 
                   // Email Input Field
@@ -78,7 +78,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: const BorderSide(color: Colors.purple, width: 2.0),
+                        borderSide: const BorderSide(
+                          color: Colors.purple,
+                          width: 2.0,
+                        ),
                       ),
                     ),
                   ),
@@ -93,11 +96,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: 'Password',
                       labelStyle: const TextStyle(color: Colors.grey),
                       prefixIcon: const Icon(Icons.lock, color: Colors.purple),
-                 
+
                       // 4. Added IconButton as suffixIcon to let users toggle visibility status
                       suffixIcon: IconButton(
                         icon: Icon(
-                          _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
                           color: Colors.purple,
                         ),
                         onPressed: () {
@@ -107,13 +112,16 @@ class _LoginScreenState extends State<LoginScreen> {
                           });
                         },
                       ),
-                      
+
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12.0),
-                        borderSide: const BorderSide(color: Colors.purple, width: 2.0),
+                        borderSide: const BorderSide(
+                          color: Colors.purple,
+                          width: 2.0,
+                        ),
                       ),
                     ),
                   ),
@@ -134,7 +142,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.purple,
                           foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 24,
+                            vertical: 12,
+                          ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
@@ -142,12 +153,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         onPressed: () {},
                         child: const Text(
                           'Sign In',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      ElevatedButton(onPressed: (){
-                        Navigator.pop(context);
-                      }, child: Text('Back'))
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Back'),
+                      ),
                     ],
                   ),
                 ],
